@@ -9,7 +9,7 @@ SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed")
 
 ADD_DEFINITIONS("-DENABLE_COLORS")
 
-find_package(Boost REQUIRED)
+find_package(Boost COMPONENTS system filesystem REQUIRED)
 find_package(Threads REQUIRED)
 find_library(wiringPi_LIB wiringPi REQUIRED)
 
