@@ -6,7 +6,6 @@ import json
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
     def handle(self):
         clientTypeJSON = str(self.request.recv(1024), "ascii")
-        # print(clientTypeJSON)
         clientTypeStr = json.loads(clientTypeJSON)["ClientType"]
         self.request.sendall(bytes("OK", "ASCII"))
         if clientTypeStr == "PUBLISHER":
